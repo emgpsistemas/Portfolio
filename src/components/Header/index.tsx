@@ -7,37 +7,79 @@ import Link from "next/link";
 import logo from "../../assets/logo.svg";
 
 import { Popover, Transition } from "@headlessui/react";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { ChatText, House, List, ListBullets, Users, X } from "phosphor-react";
 
 function Header() {
-  const [isIconHovering, setIsIconHovering] = useState(false);
   const windowWidth = window.innerWidth;
+  const [isIconHovering, setIsIconHovering] = useState(false);
+  const pathname = usePathname();
 
   const links = [
     {
       label: "Home",
       href: "/",
-      icon: <House size={28} color="#ffffff" weight="bold" />,
+      icon: (
+        <House
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/",
+            "#191938": pathname !== "/",
+          })}
+          weight="bold"
+        />
+      ),
     },
     {
       label: "Serviços",
       href: "/servicos",
-      icon: <ListBullets size={28} color="#ffffff" weight="bold" />,
+      icon: (
+        <ListBullets
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/servicos",
+            "#191938": pathname !== "/servicos",
+          })}
+          weight="bold"
+        />
+      ),
     },
     {
       label: "Sobre",
       href: "/sobre",
-      icon: <Users size={28} color="#ffffff" weight="bold" />,
+      icon: (
+        <Users
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/sobre",
+            "#191938": pathname !== "/sobre",
+          })}
+          weight="bold"
+        />
+      ),
     },
     // {
     //   label: "Portfolio",
     //   href: "/portfolio",
-    //   icon: <Code size={28} color="#ffffff" weight="bold" />,
+    //   icon: <Code size={28} color={clsx("", {
+    //   "#FFFFFF": pathname === "/portfolio",
+    //   "#191938": pathname !== "/portfolio",
+    // })} weight="bold" />,
     // },
     {
       label: "Contato",
       href: "/contato",
-      icon: <ChatText size={28} color="#ffffff" weight="bold" />,
+      icon: (
+        <ChatText
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/contato",
+            "#191938": pathname !== "/contato",
+          })}
+          weight="bold"
+        />
+      ),
     },
   ];
 
@@ -57,7 +99,7 @@ function Header() {
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
-              className="focus:ring-offset-background focus:dark-blue-600 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-dark-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
               onMouseEnter={() => setIsIconHovering(true)}
               onMouseLeave={() => setIsIconHovering(false)}
             >
@@ -103,7 +145,7 @@ function Header() {
               <div className="flex items-center justify-end">
                 <div className="">
                   <Popover.Button
-                    className="focus:ring-offset-background focus:dark-blue-600 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-dark-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     onMouseEnter={() => setIsIconHovering(true)}
                     onMouseLeave={() => setIsIconHovering(false)}
                   >
@@ -116,15 +158,34 @@ function Header() {
                   </Popover.Button>
                 </div>
               </div>
-              <nav className="mr-4 mt-6 flex flex-col items-end gap-y-8">
+              <nav className="mt-6 flex flex-col items-end gap-y-3">
                 {links.map((link) => (
                   <Link
                     href={link.href}
                     key={link.href}
-                    className="flex flex-row items-center gap-4 text-lg font-semibold"
+                    className={clsx(
+                      "flex min-w-[180px] flex-row items-center justify-end gap-4 rounded-xl px-6 py-4 transition-all ",
+                      {
+                        "bg-primary-blue-500 hover:bg-primary-blue-600":
+                          pathname === link.href,
+                      },
+                      {
+                        "bg-white hover:bg-slate-200": pathname !== link.href,
+                      }
+                    )}
                   >
-                    <span className="text-white">
-                      {link.label.toUpperCase()}
+                    <span
+                      className={clsx(
+                        "text-lg font-semibold text-black",
+                        {
+                          "text-white": pathname === link.href,
+                        },
+                        {
+                          "text-black": pathname !== link.href,
+                        }
+                      )}
+                    >
+                      {link.label}
                     </span>
                     {link.icon}
                   </Link>
