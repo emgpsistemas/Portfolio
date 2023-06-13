@@ -9,7 +9,15 @@ import logo from "../../assets/logo.svg";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { ChatText, House, List, ListBullets, Users, X } from "phosphor-react";
+import {
+  ChatText,
+  Code,
+  House,
+  List,
+  ListBullets,
+  Users,
+  X,
+} from "phosphor-react";
 
 function Header() {
   const windowWidth = window.innerWidth;
@@ -46,6 +54,20 @@ function Header() {
       ),
     },
     {
+      label: "Portfolio",
+      href: "/portfolio",
+      icon: (
+        <Code
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/portfolio",
+            "#191938": pathname !== "/portfolio",
+          })}
+          weight="bold"
+        />
+      ),
+    },
+    {
       label: "Sobre",
       href: "/sobre",
       icon: (
@@ -59,14 +81,7 @@ function Header() {
         />
       ),
     },
-    // {
-    //   label: "Portfolio",
-    //   href: "/portfolio",
-    //   icon: <Code size={28} color={clsx("", {
-    //   "#FFFFFF": pathname === "/portfolio",
-    //   "#191938": pathname !== "/portfolio",
-    // })} weight="bold" />,
-    // },
+
     {
       label: "Contato",
       href: "/contato",
@@ -84,18 +99,20 @@ function Header() {
   ];
 
   return (
-    <Popover className="relative bg-transparent">
+    <Popover className="relative flex h-32 items-center bg-transparent">
       <div className="mx-auto w-screen px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
-              <Image
-                src={logo}
-                alt="logo"
-                width={windowWidth >= 768 ? 80 : 44}
-                height={windowWidth >= 768 ? 80 : 44}
-              />
-            </Link>
+            {pathname !== "/" ? (
+              <Link href="/">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  width={windowWidth >= 768 ? 80 : 44}
+                  height={windowWidth >= 768 ? 80 : 44}
+                />
+              </Link>
+            ) : null}
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
@@ -117,7 +134,10 @@ function Header() {
                 <Link
                   href={link.href}
                   key={link.href}
-                  className="text-lg font-semibold"
+                  className={clsx("text-lg font-semibold hover:text-zinc-600", {
+                    "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
+                      pathname === link.href,
+                  })}
                 >
                   {link.label.toUpperCase()}
                 </Link>
