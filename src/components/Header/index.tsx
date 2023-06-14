@@ -99,20 +99,18 @@ function Header() {
   ];
 
   return (
-    <Popover className="relative flex h-32 items-center bg-transparent">
-      <div className="mx-auto w-screen px-10">
+    <Popover className="absolute z-50 flex h-32 items-center bg-transparent">
+      <div className="mx-auto w-[98vw] px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            {pathname !== "/" ? (
-              <Link href="/">
-                <Image
-                  src={logo}
-                  alt="logo"
-                  width={windowWidth >= 768 ? 80 : 44}
-                  height={windowWidth >= 768 ? 80 : 44}
-                />
-              </Link>
-            ) : null}
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="logo"
+                width={windowWidth >= 768 ? 80 : 44}
+                height={windowWidth >= 768 ? 80 : 44}
+              />
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
@@ -134,10 +132,13 @@ function Header() {
                 <Link
                   href={link.href}
                   key={link.href}
-                  className={clsx("text-lg font-semibold hover:text-zinc-600", {
-                    "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
-                      pathname === link.href,
-                  })}
+                  className={clsx(
+                    "text-lg font-semibold text-white hover:text-zinc-300",
+                    {
+                      "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
+                        pathname === link.href,
+                    }
+                  )}
                 >
                   {link.label.toUpperCase()}
                 </Link>

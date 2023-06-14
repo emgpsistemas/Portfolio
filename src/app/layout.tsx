@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 
+import WaveBackground from "@/components/WaveBackground";
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -19,9 +20,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={`${poppins.className} bg-zinc-50 text-black`}>
+      <body
+        className={`${poppins.className} flex w-full flex-1 bg-zinc-50 text-black`}
+      >
         <Header />
-        {children}
+        <div className="relative w-full">
+          <WaveBackground />
+          {children}
+        </div>
       </body>
     </html>
   );
