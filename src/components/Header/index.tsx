@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/logo.svg";
 
+import { isMobile } from "@/utils/isMobile";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -20,7 +21,6 @@ import {
 } from "phosphor-react";
 
 function Header() {
-  const isMobile = window ? window.innerWidth <= 768 : false;
   const [isIconHovering, setIsIconHovering] = useState(false);
   const pathname = usePathname();
 
@@ -125,6 +125,9 @@ function Header() {
         "fixed top-0 z-50 mx-auto flex h-32 items-center bg-transparent transition-all duration-500",
         {
           "backdrop-blur-md": scrolled,
+        },
+        {
+          "backdrop-blur-md": isMobile && pathname !== "/",
         }
       )}
     >

@@ -1,7 +1,8 @@
 "use client";
 
+import { isMobile } from "@/utils/isMobile";
+
 export default function Sobre() {
-  const isMobile = window.innerWidth <= 768;
   return (
     <>
       {isMobile ? null : (

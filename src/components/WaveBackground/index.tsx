@@ -1,12 +1,12 @@
 "use client";
 
+import { isMobile } from "@/utils/isMobile";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import wavesMobile from "../../assets/waves-background-mobile.svg";
 import waves from "../../assets/waves-background.svg";
 
 function WaveBackground() {
-  const isMobile = window.innerWidth <= 768;
   const pathname = usePathname();
 
   switch (true) {
