@@ -1,6 +1,7 @@
 "use client";
 
 import GoToServicesPage from "@/components/GotoServicePage";
+import { animateScroll100VH } from "@/utils/animateScroll";
 import { useEffect } from "react";
 
 export default function Servicos() {
@@ -8,9 +9,7 @@ export default function Servicos() {
 
   useEffect(() => {
     if (!isMobile) {
-      setTimeout(() => {
-        window.scrollTo(0, window.innerHeight);
-      }, 1000);
+      animateScroll100VH();
     }
   }, []);
 
