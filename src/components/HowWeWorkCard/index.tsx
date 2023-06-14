@@ -11,7 +11,7 @@ function HowWeWordCard({ id, title, description }: HowWeWork) {
           </h1>
         </div>
         <div className="flex flex-col space-y-2">
-          <h1 className="text-center text-[22px] font-bold leading-relaxed lg:text-2xl">
+          <h1 className="text-center text-[24px] font-bold leading-relaxed lg:text-2xl">
             {title}
           </h1>
           <p className="text-justify text-base font-normal leading-relaxed">
