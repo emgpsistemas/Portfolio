@@ -1,4 +1,5 @@
 import { Diferencial } from "@/interfaces/Differential";
+import { HowWeWork } from "@/interfaces/HowWeWork";
 import { Servico } from "@/interfaces/Service";
 import {
   AppStoreLogo,
@@ -140,5 +141,62 @@ export const diferenciais: Diferencial[] = [
     title: "Flexibilidade e Personalização",
     description:
       "Fornecemos soluções altamente personalizadas e flexíveis, adaptadas às necessidades específicas de cada cliente.",
+  },
+];
+
+export const comoTrabalhamos: HowWeWork[] = [
+  {
+    id: 1,
+    title: "Definição do Escopo",
+    description:
+      "Nesta etapa, é importante estabelecer claramente os objetivos, requisitos e limites do projeto. Isso inclui identificar o problema a ser resolvido, as metas a serem alcançadas e os recursos disponíveis. Esta etapa ocorre através de uma reunião inicial, sem qualquer custo.",
+  },
+  {
+    id: 2,
+    title: "Análise e Levantamento de Requisitos",
+    description:
+      "Nesta etapa, é importante entender completamente as necessidades dos stakeholders e usuários envolvidos no projeto. Isso envolve a coleta de informações, a realização de entrevistas, a análise de documentos e a identificação de requisitos funcionais e não funcionais.",
+  },
+  {
+    id: 3,
+    title: "Planejamento",
+    description:
+      "O planejamento é fundamental para mapear todas as atividades necessárias para alcançar os objetivos do projeto. Ele envolve a definição de tarefas, cronograma, recursos necessários, alocação de equipe e estimativa de custos. Nesta etapa será encaminhado um orçamento com o descritivo das tarefas a serem realizadas, bem como um cronograma inicial de desenvolvimento.",
+  },
+  {
+    id: 4,
+    title: "Design",
+    description:
+      "Com base nos requisitos levantados, é feito o design do projeto. Isso pode incluir o design da arquitetura do sistema, o design da interface do usuário, a definição do fluxo de informações e a criação de protótipos.",
+  },
+  {
+    id: 5,
+    title: "Desenvolvimento",
+    description:
+      "Esta etapa envolve a implementação real do projeto. Os desenvolvedores trabalham na construção do software, na criação de componentes, na codificação de funcionalidades e na integração de sistemas, conforme definido no design.",
+  },
+  {
+    id: 6,
+    title: "Testes",
+    description:
+      "Após o desenvolvimento, são realizados testes para garantir que o projeto atenda aos requisitos e funcione corretamente. Isso pode envolver testes de unidade, testes de integração e testes end-to-end.",
+  },
+  {
+    id: 7,
+    title: "Implantação",
+    description:
+      "Após a conclusão dos testes e a aprovação do projeto, ele é implantado em ambiente de produção. Isso pode incluir a configuração de servidores, a migração de dados, a instalação de software e a realização de testes finais antes do lançamento oficial.",
+  },
+  {
+    id: 8,
+    title: "Monitoramento e Controle",
+    description:
+      "Uma vez que o projeto esteja em execução, é importante monitorar seu desempenho e controlar seu progresso. Isso envolve o acompanhamento de indicadores-chave, a resolução de problemas, a realização de ajustes e a garantia de que o projeto esteja alinhado com o planejamento inicial.",
+  },
+  {
+    id: 9,
+    title: "Encerramento",
+    description:
+      "Finalmente, o projeto é encerrado formalmente. Isso inclui a documentação final, a avaliação dos resultados alcançados, a entrega do projeto aos stakeholders e a realização de lições aprendidas para futuros projetos.",
   },
 ];
