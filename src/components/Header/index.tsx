@@ -20,7 +20,7 @@ import {
 } from "phosphor-react";
 
 function Header() {
-  const windowWidth = window.innerWidth;
+  const isMobile = window.innerWidth <= 768;
   const [isIconHovering, setIsIconHovering] = useState(false);
   const pathname = usePathname();
 
@@ -104,12 +104,14 @@ function Header() {
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <Image
-                src={logo}
-                alt="logo"
-                width={windowWidth >= 768 ? 80 : 44}
-                height={windowWidth >= 768 ? 80 : 44}
-              />
+              {isMobile && pathname === "/" ? null : (
+                <Image
+                  src={logo}
+                  alt="logo"
+                  width={isMobile ? 44 : 80}
+                  height={isMobile ? 44 : 80}
+                />
+              )}
             </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -120,7 +122,13 @@ function Header() {
             >
               <List
                 size={32}
-                color={isIconHovering ? "#FFFFFF" : "#191938"}
+                color={
+                  isIconHovering
+                    ? "#FFFFFF"
+                    : pathname === "/" && isMobile
+                    ? "#FFFFFF"
+                    : "#191938"
+                }
                 weight="bold"
                 aria-hidden="true"
               />
@@ -133,10 +141,20 @@ function Header() {
                   href={link.href}
                   key={link.href}
                   className={clsx(
-                    "text-lg font-semibold text-white hover:text-zinc-300",
+                    "text-lg font-semibold hover:text-zinc-300",
                     {
                       "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
                         pathname === link.href,
+                    },
+                    {
+                      "text-black hover:text-zinc-700": isMobile,
+                    },
+                    {
+                      "text-white hover:text-zinc-300":
+                        isMobile && pathname === "/",
+                    },
+                    {
+                      "text-white hover:text-zinc-300": !isMobile,
                     }
                   )}
                 >

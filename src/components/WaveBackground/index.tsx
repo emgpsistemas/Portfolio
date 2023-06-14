@@ -1,20 +1,42 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import wavesMobile from "../../assets/waves-background-mobile.svg";
 import waves from "../../assets/waves-background.svg";
 
 function WaveBackground() {
-  return (
-    <div className="absolute right-0 top-0 -z-50 flex h-screen flex-1">
-      <Image
-        src={waves}
-        alt="waves"
-        width={592}
-        height={280}
-        className="flex h-full w-full flex-1  object-cover"
-      />
-    </div>
-  );
+  const isMobile = window.innerWidth <= 768;
+  const pathname = usePathname();
+
+  switch (true) {
+    case pathname === "/":
+      return (
+        <div className="absolute right-0 top-0 -z-50 flex h-screen flex-1">
+          <Image
+            src={isMobile ? wavesMobile : waves}
+            alt="waves"
+            width={1503}
+            height={973}
+            className="flex h-full w-full flex-1 object-cover"
+          />
+        </div>
+      );
+    case pathname !== "/" && !isMobile:
+      return (
+        <div className="absolute right-0 top-0 -z-50 flex h-screen flex-1">
+          <Image
+            src={isMobile ? wavesMobile : waves}
+            alt="waves"
+            width={1503}
+            height={973}
+            className="flex h-full w-full flex-1 object-cover"
+          />
+        </div>
+      );
+    default:
+      return null;
+  }
 }
 
 export default WaveBackground;
