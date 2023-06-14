@@ -7,7 +7,7 @@ function Scroll100VHIcon() {
 
   return (
     <div
-      className="absolute bottom-24 right-1/2 -translate-y-1/2 translate-x-1/2"
+      className="absolute bottom-24 right-1/2 -translate-y-1/2 translate-x-1/2 cursor-pointer"
       onClick={() => animateScroll100VH(0)}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}

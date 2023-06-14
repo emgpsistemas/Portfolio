@@ -6,99 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/logo.svg";
 
+import { useLinks } from "@/hooks/useLinks";
 import { isMobile } from "@/utils/isMobile";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import {
-  ChatText,
-  Code,
-  House,
-  List,
-  ListBullets,
-  Users,
-  X,
-} from "phosphor-react";
+import { List, X } from "phosphor-react";
 
 function Header() {
   const [isIconHovering, setIsIconHovering] = useState(false);
-  const pathname = usePathname();
-
   const [scrolled, setScrolled] = useState(false);
-
-  const links = [
-    {
-      label: "Home",
-      href: "/",
-      icon: (
-        <House
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/",
-            "#191938": pathname !== "/",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-    {
-      label: "Serviços",
-      href: "/servicos",
-      icon: (
-        <ListBullets
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/servicos",
-            "#191938": pathname !== "/servicos",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-    {
-      label: "Portfolio",
-      href: "/portfolio",
-      icon: (
-        <Code
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/portfolio",
-            "#191938": pathname !== "/portfolio",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-    {
-      label: "Sobre",
-      href: "/sobre",
-      icon: (
-        <Users
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/sobre",
-            "#191938": pathname !== "/sobre",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-
-    {
-      label: "Contato",
-      href: "/contato",
-      icon: (
-        <ChatText
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/contato",
-            "#191938": pathname !== "/contato",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-  ];
+  const pathname = usePathname();
+  const links = useLinks();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,7 +50,7 @@ function Header() {
         }
       )}
     >
-      <div className="mx-auto w-screen px-10">
+      <header className="mx-auto w-screen px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
@@ -196,7 +115,7 @@ function Header() {
             )}
           </nav>
         </div>
-      </div>
+      </header>
 
       <Transition
         as={Fragment}

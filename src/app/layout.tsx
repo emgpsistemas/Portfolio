@@ -1,7 +1,8 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import WaveBackground from "@/components/WaveBackground";
 import "./globals.css";
 
-import WaveBackground from "@/components/WaveBackground";
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="absolute w-full">
           <WaveBackground />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

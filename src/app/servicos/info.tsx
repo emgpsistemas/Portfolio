@@ -1,3 +1,4 @@
+import { Diferencial } from "@/interfaces/Differential";
 import { Servico } from "@/interfaces/Service";
 import {
   AppStoreLogo,
@@ -100,5 +101,44 @@ export const servicos: Servico[] = [
       component: <Command size={72} color="#444DF8" weight="bold" />,
       position: "left",
     },
+  },
+];
+
+export const diferenciais: Diferencial[] = [
+  {
+    id: 1,
+    title: "Transparência",
+    description:
+      "Priorizamos a atuação sempre orientada pela ética, respeito e transparência com nossos clientes e parceiros.",
+  },
+  {
+    id: 2,
+    title: "Metodologias Ágeis",
+    description:
+      "Utilizamos metodologias como Scrum ou Kanban, pela capacidade de podermos fornecer entregas rápidas e iterativas, adaptando-se às necessidades em constante mudança do cliente.",
+  },
+  {
+    id: 3,
+    title: "Experiência do Cliente",
+    description:
+      "Nos concentramos em oferecer um atendimento personalizado, comunicação transparente, prazos de entrega confiáveis ​​e suporte pós-implementação eficiente.",
+  },
+  {
+    id: 4,
+    title: "Qualidade e Garantia",
+    description:
+      "Possuímos processos e práticas rigorosas de controle de qualidade que diferencia a entrega dos projetos com alta qualidade. Isso pode incluir testes automatizados, revisões de código, práticas de desenvolvimento seguro, entre outros.",
+  },
+  {
+    id: 5,
+    title: "Abordagem Consultiva",
+    description:
+      "Ao invés de simplesmente fornecer serviços de desenvolvimento, fornecemos uma abordagem consultiva. Isso significa que trabalhamos em estreita colaboração com o cliente, entendendo seus objetivos de negócios e fornecendo orientações estratégicas sobre como a tecnologia pode ser aplicada para alcançar esses objetivos.",
+  },
+  {
+    id: 6,
+    title: "Flexibilidade e Personalização",
+    description:
+      "Fornecemos soluções altamente personalizadas e flexíveis, adaptadas às necessidades específicas de cada cliente.",
   },
 ];

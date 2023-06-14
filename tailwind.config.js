@@ -20,6 +20,7 @@ module.exports = {
         "neutral-gray-400": "#FDFDFD",
         "neutral-gray-500": "#F4F4F4",
         "neutral-gray-600": "#EAEAEA",
+        "background-blue": "#E3E8FF",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
