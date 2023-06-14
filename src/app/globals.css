@@ -25,3 +25,19 @@ body {
   background: #fc434f;
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #dcdcdc;
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #edf2f7;
+    border-radius: 0px;
+  }
+}
