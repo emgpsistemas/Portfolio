@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/SectionTitle";
-import ServiceInfo from "@/components/ServiceInfo";
+import ServiceInfoCard from "@/components/ServiceInfoCard";
 import { servicos } from "./info";
 
 function ServicesSection() {
@@ -8,7 +8,7 @@ function ServicesSection() {
       <SectionTitle title="Serviços" />
       <div className="mt-12 w-full space-y-10 lg:space-y-20">
         {servicos.map((servico) => (
-          <ServiceInfo key={servico.id} {...servico} />
+          <ServiceInfoCard key={servico.id} {...servico} />
         ))}
       </div>
     </section>

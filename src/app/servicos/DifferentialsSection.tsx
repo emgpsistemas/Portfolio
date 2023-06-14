@@ -2,7 +2,7 @@ import DifferentialInfoCard from "@/components/DifferentialInfoCard";
 import SectionTitle from "@/components/SectionTitle";
 import { diferenciais } from "./info";
 
-function DIfferentialsSection() {
+function DifferentialsSection() {
   return (
     <section className="min-h-screen w-full bg-background-blue">
       <div className="mx-auto w-full max-w-6xl px-11 py-32 md:px-20 lg:p-32">
@@ -17,4 +17,4 @@ function DIfferentialsSection() {
   );
 }
 
-export default DIfferentialsSection;
+export default DifferentialsSection;
