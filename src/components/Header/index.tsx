@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +23,8 @@ function Header() {
   const isMobile = window.innerWidth <= 768;
   const [isIconHovering, setIsIconHovering] = useState(false);
   const pathname = usePathname();
+
+  const [scrolled, setScrolled] = useState(false);
 
   const links = [
     {
@@ -98,9 +100,35 @@ function Header() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolledHeight = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      if (scrolledHeight >= windowHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Popover className="absolute z-50 flex h-32 items-center bg-transparent">
-      <div className="mx-auto w-[98vw] px-10">
+    <Popover
+      className={clsx(
+        "fixed top-0 z-50 mx-auto flex h-32 items-center bg-transparent transition-all duration-500",
+        {
+          "backdrop-blur-md": scrolled,
+        }
+      )}
+    >
+      <div className="mx-auto w-screen px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
@@ -141,20 +169,21 @@ function Header() {
                   href={link.href}
                   key={link.href}
                   className={clsx(
-                    "text-lg font-semibold hover:text-zinc-300",
+                    "text-lg font-semibold transition-all duration-500",
                     {
                       "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
                         pathname === link.href,
                     },
+
                     {
-                      "text-black hover:text-zinc-700": isMobile,
+                      "text-black hover:text-zinc-700": isMobile || scrolled,
                     },
                     {
                       "text-white hover:text-zinc-300":
                         isMobile && pathname === "/",
                     },
                     {
-                      "text-white hover:text-zinc-300": !isMobile,
+                      "text-white hover:text-zinc-300": !isMobile && !scrolled,
                     }
                   )}
                 >

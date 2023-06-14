@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${poppins.className} flex w-full flex-1 bg-zinc-50 text-black`}
       >
         <Header />
-        <div className="relative w-full">
+        <div className="absolute w-full">
           <WaveBackground />
           {children}
         </div>
