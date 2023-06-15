@@ -4,6 +4,9 @@ export namespace CustomInput {
   export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     id: string;
-    value: string;
+    register: any;
+    error: any;
+    isMasked?: boolean;
+    mask?: string;
   }
 }

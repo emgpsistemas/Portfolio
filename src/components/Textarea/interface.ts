@@ -5,6 +5,7 @@ export namespace CustomTextArea {
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label: string;
     id: string;
-    value: string;
+    register: any;
+    error: any;
   }
 }
