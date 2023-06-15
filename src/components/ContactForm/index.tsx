@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../Button";
 import { Input } from "../Input";
@@ -8,9 +9,10 @@ import { ContactFormSchema, contactFormSchema } from "./validation";
 function ContactForm() {
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
+    watch,
     formState: { errors },
-    reset,
+    // reset,
   } = useForm<ContactFormSchema>({
     defaultValues: {
       name: "",
@@ -21,10 +23,24 @@ function ContactForm() {
     resolver: zodResolver(contactFormSchema),
   });
 
-  async function onSubmit(data: ContactFormSchema) {
-    console.log("DADOS =>", data);
-    reset();
+  // async function onSubmit(data: ContactFormSchema) {
+  //   // console.log("DADOS =>", data);
+  //   reset();
+  // }
+
+  // Lógica provisória para desabilitar o botão de enviar até correção de bug de requisição POST na API do NextJS
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  function checkIfIsButtonDisabled() {
+    const fieldValues = Object.values(watch());
+
+    const result = fieldValues.some((value) => value === "") ? true : false;
+
+    return result;
   }
+  useEffect(() => {
+    setIsButtonDisabled(checkIfIsButtonDisabled());
+  }, [watch()]);
+  // Fim da lógica provisória
 
   return (
     <form
@@ -79,7 +95,9 @@ function ContactForm() {
         </div>
       </div>
       <div className="mt-10 px-16">
-        <Button type="submit">Enviar</Button>
+        <Button type="submit" disabled={isButtonDisabled}>
+          Enviar
+        </Button>
       </div>
     </form>
   );
