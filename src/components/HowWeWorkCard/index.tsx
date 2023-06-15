@@ -1,7 +1,9 @@
 import { HowWeWork } from "@/interfaces/HowWeWork";
-import { isMobile } from "@/utils/isMobile";
+import { IsMobile } from "@/utils/isMobile";
 
 function HowWeWordCard({ id, title, description }: HowWeWork) {
+  const { isMobile } = IsMobile();
+
   if (isMobile) {
     return (
       <div className="flex flex-col">

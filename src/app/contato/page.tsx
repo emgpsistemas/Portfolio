@@ -1,7 +1,7 @@
 "use client";
 
 import InitialScreenTitle from "@/components/InitialScreenTitle";
-import { isMobile } from "@/utils/isMobile";
+import { IsMobile } from "@/utils/isMobile";
 import Image from "next/image";
 
 import undrawContact from "@/assets/undraw-contact.svg";
@@ -10,11 +10,13 @@ import { animateScroll100VH } from "@/utils/animateScroll";
 import { useEffect } from "react";
 
 export default function Contato() {
+  const { isMobile } = IsMobile();
+
   useEffect(() => {
     if (!isMobile) {
       animateScroll100VH();
     }
-  }, []);
+  }, [isMobile]);
   return (
     <>
       {isMobile ? null : <InitialScreenTitle title="Contato" />}

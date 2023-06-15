@@ -1,7 +1,9 @@
 import { Servico } from "@/interfaces/Service";
-import { isMobile } from "@/utils/isMobile";
+import { IsMobile } from "@/utils/isMobile";
 
 function ServiceInfoCard({ title, description, icon }: Servico) {
+  const { isMobile } = IsMobile();
+
   if (isMobile) {
     return (
       <div className="flex flex-col">

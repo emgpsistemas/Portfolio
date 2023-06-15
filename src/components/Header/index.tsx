@@ -7,7 +7,7 @@ import Link from "next/link";
 import logo from "../../assets/logo.svg";
 
 import { useLinks } from "@/hooks/useLinks";
-import { isMobile } from "@/utils/isMobile";
+import { IsMobile } from "@/utils/isMobile";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -18,6 +18,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const links = useLinks();
+  const { isMobile } = IsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
