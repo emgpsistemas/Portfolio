@@ -1,19 +1,31 @@
 "use client";
 
+import InitialScreenTitle from "@/components/InitialScreenTitle";
+import SectionTitle from "@/components/SectionTitle";
+import TeamMemberCard from "@/components/TeamMemberCard";
+import { animateScroll100VH } from "@/utils/animateScroll";
 import { isMobile } from "@/utils/isMobile";
+import { useEffect } from "react";
+import { equipe } from "./info";
 
 export default function Sobre() {
+  useEffect(() => {
+    if (!isMobile) {
+      animateScroll100VH();
+    }
+  }, []);
+
   return (
     <>
-      {isMobile ? null : (
-        <div className="grid h-screen grid-flow-row grid-cols-1 items-center lg:grid-cols-2">
-          <div className="flex justify-start p-32">
-            <h1 className="text-[40px] font-bold leading-relaxed md:text-6xl lg:text-[76px]">
-              Sobre Nós
-            </h1>
-          </div>
+      {isMobile ? null : <InitialScreenTitle title="Sobre Nós" />}
+      <section className="mx-auto min-h-screen w-screen max-w-6xl px-10 py-32 md:px-20 lg:p-32">
+        <SectionTitle title="Equipe" />
+        <div className="mt-20 w-full space-y-10 lg:space-y-20">
+          {equipe.map((item) => (
+            <TeamMemberCard key={item.id} {...item} />
+          ))}
         </div>
-      )}
+      </section>
     </>
   );
 }

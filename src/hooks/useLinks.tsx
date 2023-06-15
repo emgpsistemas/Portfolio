@@ -1,6 +1,12 @@
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { ChatText, Code, House, ListBullets, Users } from "phosphor-react";
+import {
+  ChatText,
+  // Code,
+  House,
+  ListBullets,
+  Users,
+} from "phosphor-react";
 
 export const useLinks = () => {
   const pathname = usePathname();
@@ -34,20 +40,20 @@ export const useLinks = () => {
         />
       ),
     },
-    {
-      label: "Portfolio",
-      href: "/portfolio",
-      icon: (
-        <Code
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/portfolio",
-            "#191938": pathname !== "/portfolio",
-          })}
-          weight="bold"
-        />
-      ),
-    },
+    // {
+    //   label: "Portfolio",
+    //   href: "/portfolio",
+    //   icon: (
+    //     <Code
+    //       size={28}
+    //       color={clsx("", {
+    //         "#FFFFFF": pathname === "/portfolio",
+    //         "#191938": pathname !== "/portfolio",
+    //       })}
+    //       weight="bold"
+    //     />
+    //   ),
+    // },
     {
       label: "Sobre",
       href: "/sobre",
