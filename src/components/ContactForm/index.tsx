@@ -1,26 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { Textarea } from "../Textarea";
-
-const formSchema = z.object({
-  name: z.string().nonempty("Campo obrigatório"),
-  email: z.string().nonempty("Campo obrigatório").email("Email inválido"),
-  phone: z
-    .string()
-    .nonempty("Campo obrigatório")
-    .min(15, "O telefone deve conter 11 dígitos caracteres")
-    .max(15, "O telefone deve conter 11 dígitos caracteres")
-    .regex(/^\(\d{2}\) \d{5}-\d{4}$/, "Telefone inválido"),
-  message: z
-    .string()
-    .nonempty("Campo obrigatório")
-    .min(10, "Mínimo 10 caracteres"),
-});
-
-type FormSchema = z.infer<typeof formSchema>;
+import { ContactFormSchema, contactFormSchema } from "./validation";
 
 function ContactForm() {
   const {
@@ -28,23 +11,29 @@ function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormSchema>({
+  } = useForm<ContactFormSchema>({
     defaultValues: {
       name: "",
       email: "",
       phone: "",
       message: "",
     },
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(contactFormSchema),
   });
 
-  async function onSubmit(data: FormSchema) {
+  async function onSubmit(data: ContactFormSchema) {
     console.log("DADOS =>", data);
     reset();
   }
 
   return (
-    <form className="pt-16 lg:p-16" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="pt-16 lg:p-16"
+      // onSubmit={handleSubmit(onSubmit)}
+      action="https://formsubmit.co/eduardomuchak@gmail.com"
+      method="POST"
+    >
+      <input type="hidden" name="_captcha" value="false" />
       <h1 className="mb-10 text-center text-2xl font-bold text-black md:text-4xl lg:mb-7 lg:text-start">
         Envie uma mensagem
       </h1>
