@@ -1,16 +1,16 @@
 "use client";
 
 import InitialScreenTitle from "@/components/InitialScreenTitle";
-import { IsMobile } from "@/utils/isMobile";
 import Image from "next/image";
 
 import undrawContact from "@/assets/undraw-contact.svg";
 import ContactForm from "@/components/ContactForm";
+import { IsMobileContext } from "@/contexts/isMobile";
 import { animateScroll100VH } from "@/utils/animateScroll";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Contato() {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   useEffect(() => {
     if (!isMobile) {

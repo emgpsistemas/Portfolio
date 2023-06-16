@@ -3,14 +3,14 @@
 import { animateScroll100VH } from "@/utils/animateScroll";
 
 import InitialScreenTitle from "@/components/InitialScreenTitle";
-import { IsMobile } from "@/utils/isMobile";
-import { useEffect } from "react";
+import { IsMobileContext } from "@/contexts/isMobile";
+import { useContext, useEffect } from "react";
 import DifferentialsSection from "./DifferentialsSection";
 import HowWeWorkSection from "./HowWeWorkSection";
 import ServicesSection from "./ServicesSection";
 
 export default function Servicos() {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   useEffect(() => {
     if (!isMobile) {

@@ -1,13 +1,13 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/logo.svg";
 
+import { IsMobileContext } from "@/contexts/isMobile";
 import { useLinks } from "@/hooks/useLinks";
-import { IsMobile } from "@/utils/isMobile";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -18,7 +18,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const links = useLinks();
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   useEffect(() => {
     const handleScroll = () => {

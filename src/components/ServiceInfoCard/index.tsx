@@ -1,8 +1,9 @@
+import { IsMobileContext } from "@/contexts/isMobile";
 import { Servico } from "@/interfaces/Service";
-import { IsMobile } from "@/utils/isMobile";
+import { useContext } from "react";
 
 function ServiceInfoCard({ title, description, icon }: Servico) {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   if (isMobile) {
     return (

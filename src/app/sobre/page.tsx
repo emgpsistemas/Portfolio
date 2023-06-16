@@ -3,13 +3,13 @@
 import InitialScreenTitle from "@/components/InitialScreenTitle";
 import SectionTitle from "@/components/SectionTitle";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import { IsMobileContext } from "@/contexts/isMobile";
 import { animateScroll100VH } from "@/utils/animateScroll";
-import { IsMobile } from "@/utils/isMobile";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { equipe } from "./info";
 
 export default function Sobre() {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   useEffect(() => {
     if (!isMobile) {
