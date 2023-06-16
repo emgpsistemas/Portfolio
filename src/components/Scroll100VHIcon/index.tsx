@@ -1,3 +1,5 @@
+"use client";
+
 import { animateScroll100VH } from "@/utils/animateScroll";
 import { CaretDoubleDown } from "phosphor-react";
 import { useState } from "react";

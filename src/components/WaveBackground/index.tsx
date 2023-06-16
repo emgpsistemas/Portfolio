@@ -1,14 +1,15 @@
 "use client";
 
-import { IsMobile } from "@/utils/isMobile";
+import { IsMobileContext } from "@/contexts/isMobile";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
 import wavesMobile from "../../assets/waves-background-mobile.svg";
 import waves from "../../assets/waves-background.svg";
 
 function WaveBackground() {
   const pathname = usePathname();
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   switch (true) {
     case pathname === "/":

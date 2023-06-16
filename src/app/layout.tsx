@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import WaveBackground from "@/components/WaveBackground";
 import "./globals.css";
 
+import { IsMobileProvider } from "@/contexts/isMobile";
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -21,16 +22,18 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${poppins.className} flex w-full flex-1 bg-zinc-50 text-black`}
-      >
-        <Header />
-        <div className="absolute w-full">
-          <WaveBackground />
-          {children}
-          <Footer />
-        </div>
-      </body>
+      <IsMobileProvider>
+        <body
+          className={`${poppins.className} flex w-full flex-1 bg-zinc-50 text-black`}
+        >
+          <Header />
+          <div className="absolute w-full">
+            <WaveBackground />
+            {children}
+            <Footer />
+          </div>
+        </body>
+      </IsMobileProvider>
     </html>
   );
 }

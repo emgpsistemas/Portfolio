@@ -1,8 +1,9 @@
+import { IsMobileContext } from "@/contexts/isMobile";
 import { HowWeWork } from "@/interfaces/HowWeWork";
-import { IsMobile } from "@/utils/isMobile";
+import { useContext } from "react";
 
 function HowWeWordCard({ id, title, description }: HowWeWork) {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   if (isMobile) {
     return (

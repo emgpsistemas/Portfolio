@@ -28,7 +28,7 @@ export const useLinks = () => {
     },
     {
       label: "Serviços",
-      href: "/servicos",
+      href: "servicos",
       icon: (
         <ListBullets
           size={28}
@@ -42,7 +42,7 @@ export const useLinks = () => {
     },
     // {
     //   label: "Portfolio",
-    //   href: "/portfolio",
+    //   href: "portfolio",
     //   icon: (
     //     <Code
     //       size={28}
@@ -55,29 +55,28 @@ export const useLinks = () => {
     //   ),
     // },
     {
-      label: "Sobre",
-      href: "/sobre",
-      icon: (
-        <Users
-          size={28}
-          color={clsx("", {
-            "#FFFFFF": pathname === "/sobre",
-            "#191938": pathname !== "/sobre",
-          })}
-          weight="bold"
-        />
-      ),
-    },
-
-    {
       label: "Contato",
-      href: "/contato",
+      href: "contato",
       icon: (
         <ChatText
           size={28}
           color={clsx("", {
             "#FFFFFF": pathname === "/contato",
             "#191938": pathname !== "/contato",
+          })}
+          weight="bold"
+        />
+      ),
+    },
+    {
+      label: "Sobre",
+      href: "sobre",
+      icon: (
+        <Users
+          size={28}
+          color={clsx("", {
+            "#FFFFFF": pathname === "/sobre",
+            "#191938": pathname !== "/sobre",
           })}
           weight="bold"
         />

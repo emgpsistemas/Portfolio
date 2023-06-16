@@ -1,11 +1,11 @@
 "use client";
 
+import { IsMobileContext } from "@/contexts/isMobile";
 import { animateScroll100VH } from "@/utils/animateScroll";
-import { IsMobile } from "@/utils/isMobile";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Portfolio() {
-  const { isMobile } = IsMobile();
+  const { isMobile } = useContext(IsMobileContext);
 
   useEffect(() => {
     if (!isMobile) {
