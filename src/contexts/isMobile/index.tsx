@@ -8,7 +8,6 @@ export const IsMobileContext = createContext({ isMobile: false });
 export const IsMobileProvider = ({ children }: any) => {
   const [isMobile, setIsMobile] = useState(false);
   const { width } = useWindowSize();
-
   const handleResize = () => {
     if (width <= 834) {
       setIsMobile(true);
