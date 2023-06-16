@@ -2,8 +2,8 @@ import DifferentialInfoCard from "@/components/DifferentialInfoCard";
 import SectionContainer from "@/components/SectionContainer";
 import SectionTitle from "@/components/SectionTitle";
 import { IsMobileContext } from "@/contexts/isMobile";
+import { diferenciais } from "@/mock/info";
 import { useContext } from "react";
-import { diferenciais } from "./info";
 
 function DifferentialsSection() {
   const { isMobile } = useContext(IsMobileContext);

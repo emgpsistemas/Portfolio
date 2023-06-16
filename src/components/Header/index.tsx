@@ -4,6 +4,8 @@ import { Fragment, useContext, useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Link as LinkRS } from "react-scroll";
+
 import logo from "../../assets/logo.svg";
 
 import { IsMobileContext } from "@/contexts/isMobile";
@@ -54,16 +56,23 @@ function Header() {
       <header className="mx-auto w-screen px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
+            <LinkRS
+              activeClass="active"
+              to={"home"}
+              spy={true}
+              smooth={true}
+              duration={700}
+            >
               {isMobile && pathname === "/" ? null : (
                 <Image
                   src={logo}
                   alt="logo"
                   width={isMobile ? 44 : 80}
                   height={isMobile ? 44 : 80}
+                  className="cursor-pointer"
                 />
               )}
-            </Link>
+            </LinkRS>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
@@ -88,11 +97,15 @@ function Header() {
           <nav className="hidden space-x-10 md:flex">
             {links.map((link) =>
               link.label === "Home" ? null : (
-                <Link
-                  href={link.href}
+                <LinkRS
                   key={link.href}
+                  activeClass="active"
+                  to={link.href}
+                  spy={true}
+                  smooth={true}
+                  duration={700}
                   className={clsx(
-                    "text-lg font-semibold transition-all duration-500",
+                    "cursor-pointer text-lg font-semibold transition-all duration-500",
                     {
                       "underline-red-500 underline decoration-primary-red-500 decoration-4 underline-offset-8":
                         pathname === link.href,
@@ -111,7 +124,7 @@ function Header() {
                   )}
                 >
                   {link.label.toUpperCase()}
-                </Link>
+                </LinkRS>
               )
             )}
           </nav>

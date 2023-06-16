@@ -1,6 +1,6 @@
 import HowWeWordCard from "@/components/HowWeWorkCard";
 import SectionTitle from "@/components/SectionTitle";
-import { comoTrabalhamos } from "./info";
+import { comoTrabalhamos } from "@/mock/info";
 
 function HowWeWorkSection() {
   return (
