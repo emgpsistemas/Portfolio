@@ -3,7 +3,6 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Link as LinkRS } from "react-scroll";
 
 import logo from "../../assets/logo.svg";
@@ -63,7 +62,7 @@ function Header() {
               smooth={true}
               duration={700}
             >
-              {isMobile && pathname === "/" ? null : (
+              {isMobile && !scrolled ? null : (
                 <Image
                   src={logo}
                   alt="logo"
@@ -83,11 +82,7 @@ function Header() {
               <List
                 size={32}
                 color={
-                  isIconHovering
-                    ? "#FFFFFF"
-                    : pathname === "/" && isMobile
-                    ? "#FFFFFF"
-                    : "#191938"
+                  isIconHovering ? "#FFFFFF" : scrolled ? "#191938" : "#FFFFFF"
                 }
                 weight="bold"
                 aria-hidden="true"
@@ -115,8 +110,7 @@ function Header() {
                       "text-black hover:text-zinc-700": isMobile || scrolled,
                     },
                     {
-                      "text-white hover:text-zinc-300":
-                        isMobile && pathname === "/",
+                      "text-white hover:text-zinc-300": isMobile && !scrolled,
                     },
                     {
                       "text-white hover:text-zinc-300": !isMobile && !scrolled,
@@ -164,9 +158,13 @@ function Header() {
               </div>
               <nav className="mt-6 flex flex-col items-end gap-y-3">
                 {links.map((link) => (
-                  <Link
-                    href={link.href}
+                  <LinkRS
                     key={link.href}
+                    activeClass="active"
+                    to={link.href}
+                    spy={true}
+                    smooth={true}
+                    duration={700}
                     className={clsx(
                       "flex min-w-[180px] flex-row items-center justify-end gap-4 rounded-xl px-6 py-4 transition-all ",
                       {
@@ -192,7 +190,7 @@ function Header() {
                       {link.label}
                     </span>
                     {link.icon}
-                  </Link>
+                  </LinkRS>
                 ))}
               </nav>
             </div>

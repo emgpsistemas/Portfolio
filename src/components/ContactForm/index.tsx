@@ -52,7 +52,7 @@ function ContactForm() {
       method="POST"
     >
       <input type="hidden" name="_captcha" value="false" />
-      <h1 className="mb-10 text-center text-2xl font-bold text-black md:text-4xl lg:mb-7 lg:text-start">
+      <h1 className="mb-10 text-center text-2xl font-bold text-black  md:text-4xl lg:mb-7 lg:text-start">
         Envie uma mensagem
       </h1>
       <div className="space-y-5">
@@ -63,7 +63,6 @@ function ContactForm() {
             error={errors.name}
             register={register("name")}
             placeholder="Eduardo"
-            autoFocus
           />
         </div>
         <div className="flex flex-col">
