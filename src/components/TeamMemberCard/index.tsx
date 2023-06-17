@@ -12,7 +12,7 @@ function TeamMemberCard({
   github,
 }: TeamMember) {
   return (
-    <div className="flex flex-col items-start justify-center gap-10 rounded-xl bg-white p-10 md:flex-row">
+    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-white p-10 md:flex-row lg:items-start">
       <div className="flex items-start justify-start">
         <Image
           src={imagem}
@@ -24,7 +24,9 @@ function TeamMemberCard({
       </div>
       <div className="flex w-full flex-1 flex-col space-y-3">
         <h3 className="text-2xl font-bold text-black">{nome}</h3>
-        <p className="text-base font-normal text-black">{descricao}</p>
+        <p className="text-justify text-base font-normal text-black">
+          {descricao}
+        </p>
         <div className="flex flex-row space-x-3">
           <a href={github} target="_blank" rel="noreferrer">
             <Image
