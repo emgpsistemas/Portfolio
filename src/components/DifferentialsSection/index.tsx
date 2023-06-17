@@ -15,7 +15,7 @@ function DifferentialsSection() {
   );
 
   return (
-    <SectionContainer isBlueBackground>
+    <SectionContainer isBlueBackground id={"diferenciais"}>
       <SectionTitle title="Nossos Diferenciais" />
       {isMobile ? (
         <div className="mt-12 grid w-full grid-flow-row-dense grid-cols-1 gap-10 lg:grid-cols-2">

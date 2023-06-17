@@ -12,8 +12,8 @@ function TeamMemberCard({
   github,
 }: TeamMember) {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 md:flex-row">
-      <div className="flex">
+    <div className="flex flex-col items-start justify-center gap-10 rounded-xl bg-white p-10 md:flex-row">
+      <div className="flex items-start justify-start">
         <Image
           src={imagem}
           alt=""

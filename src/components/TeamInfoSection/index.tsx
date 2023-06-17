@@ -5,9 +5,9 @@ import TeamMemberCard from "../TeamMemberCard";
 
 function TeamInfoSection() {
   return (
-    <SectionContainer id={"sobre"}>
+    <SectionContainer id={"sobre"} isBlueBackground>
       <SectionTitle title="Equipe" />
-      <div className="mt-20 w-full space-y-10 lg:space-y-20">
+      <div className="mt-12 w-full space-y-10 lg:space-y-10">
         {equipe.map((item) => (
           <TeamMemberCard key={item.id} {...item} />
         ))}
