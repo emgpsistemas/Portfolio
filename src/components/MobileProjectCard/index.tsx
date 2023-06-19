@@ -1,14 +1,14 @@
 import { Project } from "@/interfaces/Project";
 import Image from "next/image";
 
-function WebProjectCard({ title, description, image }: Project) {
+function MobileProjectCard({ title, description, image }: Project) {
   return (
-    <div className="flex flex-col lg:max-w-[500px]">
+    <div className="flex flex-col justify-center lg:max-w-[380px]">
       <Image
         src={image}
         alt={`${title} image`}
-        width={500}
-        height={400}
+        width={380}
+        height={1013}
         className="mx-auto self-center rounded-3xl"
       />
       <div className="mt-5 flex flex-col">
@@ -21,4 +21,4 @@ function WebProjectCard({ title, description, image }: Project) {
   );
 }
 
-export default WebProjectCard;
+export default MobileProjectCard;
