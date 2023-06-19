@@ -9,16 +9,17 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
+  border: 0px solid #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dcdcdc;
-  border-radius: 5px;
+  background-color: #191938;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #edf2f7;
-  border-radius: 5px;
+  background: #fdfdfd;
+  border-radius: 0px;
 }
 
 ::selection {
