@@ -6,10 +6,23 @@ import HomeSection from "@/components/HomeSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import ServicesSection from "@/components/ServicesSection";
 import TeamInfoSection from "@/components/TeamInfoSection";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <HomeSection />
       <ServicesSection />
       <DifferentialsSection />

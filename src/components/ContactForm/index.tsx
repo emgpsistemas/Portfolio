@@ -1,20 +1,22 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { Input } from "../Input";
+import IsButtonLoading from "../IsButtonLoading";
 import { Textarea } from "../Textarea";
 import { ContactFormSchema, contactFormSchema } from "./validation";
 
 function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
-    // handleSubmit,
-    watch,
+    handleSubmit,
     formState: { errors },
-    // reset,
+    reset,
   } = useForm<ContactFormSchema>({
     defaultValues: {
       name: "",
@@ -25,33 +27,29 @@ function ContactForm() {
     resolver: zodResolver(contactFormSchema),
   });
 
-  // async function onSubmit(data: ContactFormSchema) {
-  //   // console.log("DADOS =>", data);
-  //   reset();
-  // }
-
-  // Lógica provisória para desabilitar o botão de enviar até correção de bug de requisição POST na API do NextJS
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  function checkIfIsButtonDisabled() {
-    const fieldValues = Object.values(watch());
-
-    const result = fieldValues.some((value) => value === "") ? true : false;
-
-    return result;
+  async function onSubmit(data: ContactFormSchema) {
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        toast.success(
+          "E-mail enviado com sucesso! Entraremos em contato em breve."
+        );
+        reset();
+      } else {
+        toast.error("Erro ao enviar e-mail!");
+      }
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   }
-  useEffect(() => {
-    setIsButtonDisabled(checkIfIsButtonDisabled());
-  }, [watch()]);
-  // Fim da lógica provisória
 
   return (
-    <form
-      className="pt-16 lg:p-16"
-      // onSubmit={handleSubmit(onSubmit)}
-      action="https://formsubmit.co/eduardomuchak@gmail.com"
-      method="POST"
-    >
-      <input type="hidden" name="_captcha" value="false" />
+    <form className="pt-16 lg:p-16" onSubmit={handleSubmit(onSubmit)}>
       <h1 className="mb-10 text-center text-2xl font-bold text-black  md:text-4xl lg:mb-7 lg:text-start">
         Envie uma mensagem
       </h1>
@@ -95,9 +93,10 @@ function ContactForm() {
           />
         </div>
       </div>
+
       <div className="mt-10 px-16">
-        <Button type="submit" disabled={isButtonDisabled}>
-          Enviar
+        <Button type="submit">
+          {isLoading ? <IsButtonLoading /> : "Enviar"}
         </Button>
       </div>
     </form>
