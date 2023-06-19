@@ -1,12 +1,12 @@
 import SectionContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 
-function WebSection() {
+function MobileSection() {
   return (
-    <SectionContainer isBlueBackground id="web">
-      <SectionTitle title="Web" />
+    <SectionContainer id="mobile">
+      <SectionTitle title="Mobile" />
     </SectionContainer>
   );
 }
 
-export default WebSection;
+export default MobileSection;

@@ -1,6 +1,8 @@
 import { usePathname } from "next/navigation";
 import {
   ChatText,
+  DeviceMobile,
+  GoogleChromeLogo,
   // Code,
   House,
   ListBullets,
@@ -32,6 +34,16 @@ export const useLinks = () => {
       label: "Como trabalhamos",
       href: "como-trabalhamos",
       icon: <ListNumbers size={28} color={"#191938"} weight="bold" />,
+    },
+    {
+      label: "Projetos Web",
+      href: "web",
+      icon: <GoogleChromeLogo size={28} color={"#191938"} weight="bold" />,
+    },
+    {
+      label: "Projetos Mobile",
+      href: "mobile",
+      icon: <DeviceMobile size={28} color={"#191938"} weight="bold" />,
     },
     // {
     //   label: "Portfolio",
