@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import WaveBackground from "@/components/WaveBackground";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 import { IsMobileProvider } from "@/contexts/isMobile";
