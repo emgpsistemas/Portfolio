@@ -19,9 +19,9 @@ export async function POST(request: Request, response: NextApiResponse) {
       text: text,
     };
 
-    await SendGridMail.send(messageToSend);
+    const response = await SendGridMail.send(messageToSend);
 
-    return NextResponse.json({ message: "Email enviado com sucesso!" });
+    return NextResponse.json({ message: response });
   } catch (error) {
     return response.status(500).json({ error: "Erro ao enviar mensagem!" });
   }
