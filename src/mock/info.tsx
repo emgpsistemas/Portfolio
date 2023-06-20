@@ -1,10 +1,11 @@
 import projetosMobileImage from "@/assets/projetosMobile.png";
-import projetosWebImage from "@/assets/projetosWeb.png";
 import eduardoMuchak from "@/assets/team/eduardo-muchak.png";
 import gabrielPeralta from "@/assets/team/gabriel-peralta.png";
+import triviaGameGif from "@/assets/webProjects/trivia.gif";
+import trybeWalletGif from "@/assets/webProjects/trybewallet.gif";
 import { Diferencial } from "@/interfaces/Differential";
 import { HowWeWork } from "@/interfaces/HowWeWork";
-import { Project } from "@/interfaces/Project";
+import { MobileProject, WebProject } from "@/interfaces/Project";
 import { Servico } from "@/interfaces/Service";
 import { TeamMember } from "@/interfaces/TeamMember";
 import {
@@ -228,52 +229,24 @@ export const equipe: TeamMember[] = [
   },
 ];
 
-export const projetosWeb: Project[] = [
+export const projetosWeb: WebProject[] = [
   {
     id: 1,
-    title: "nome do projeto",
+    title: "Trybe Wallet",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
+      "TrybeWallet é um projeto no qual foi desenvolvido uma aplicação web para ajudar as pessoas usuárias a gerenciar seus gastos em diferentes moedas. O projeto foi desenvolvido seguindo as diretrizes e padrões de acessibilidade do WCAG 2.1. Além disso, o projeto foi desenvolvido com ReactJS em conjunto com o Redux para gerenciar os estados da aplicação e a conversa entre os componentes. Também foi desenvolvido com testes unitários e de integração.",
+    image: trybeWalletGif,
   },
   {
     id: 2,
-    title: "nome do projeto",
+    title: "Trivia Game",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
-  },
-  {
-    id: 3,
-    title: "nome do projeto",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
-  },
-  {
-    id: 4,
-    title: "nome do projeto",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
-  },
-  {
-    id: 5,
-    title: "nome do projeto",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
-  },
-  {
-    id: 6,
-    title: "nome do projeto",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    image: projetosWebImage,
+      "Um jogo de trivia consiste em perguntas e respostas, onde os jogadores são desafiados a demonstrar seu conhecimento em diferentes áreas. As perguntas são feitas pelo apresentador ou pelo sistema, e os jogadores têm um tempo limitado para responder. As respostas corretas recebem pontos, e o jogador ou equipe com mais pontos no final é o vencedor. É uma atividade interativa e divertida para testar habilidades de conhecimento geral e competir com outras pessoas, seja em eventos sociais ou online.",
+    image: triviaGameGif,
   },
 ];
 
-export const projetosMobile: Project[] = [
+export const projetosMobile: MobileProject[] = [
   {
     id: 1,
     title: "nome do projeto",

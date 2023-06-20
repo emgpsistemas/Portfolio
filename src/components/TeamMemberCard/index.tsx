@@ -23,7 +23,7 @@ function TeamMemberCard({
         />
       </div>
       <div className="flex w-full flex-1 flex-col space-y-3">
-        <h3 className="text-2xl font-bold text-black">{nome}</h3>
+        <h1 className="text-2xl font-bold text-black">{nome}</h1>
         <p className="text-justify text-base font-normal text-black">
           {descricao}
         </p>

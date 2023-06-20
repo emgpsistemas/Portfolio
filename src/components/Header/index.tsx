@@ -56,6 +56,9 @@ function Header() {
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <LinkRS
+              id="logo-link"
+              alt="Logo da EMGP Sistemas"
+              href="/"
               activeClass="active"
               to={"home"}
               spy={true}
@@ -64,8 +67,9 @@ function Header() {
             >
               {isMobile && !scrolled ? null : (
                 <Image
+                  id="logo-image"
                   src={logo}
-                  alt="logo"
+                  alt="Logo da EMGP Sistemas"
                   width={isMobile ? 44 : 80}
                   height={isMobile ? 44 : 80}
                   className="cursor-pointer"
@@ -75,6 +79,7 @@ function Header() {
           </div>
           <div className="-my-2 -mr-2 lg:hidden">
             <Popover.Button
+              id="menu-button"
               className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
               onMouseEnter={() => setIsIconHovering(true)}
               onMouseLeave={() => setIsIconHovering(false)}
@@ -93,6 +98,7 @@ function Header() {
             {links.map((link) =>
               link.label === "Home" ? null : (
                 <LinkRS
+                  href={link.href}
                   key={link.href}
                   activeClass="active"
                   to={link.href}
@@ -143,6 +149,7 @@ function Header() {
               <div className="flex items-center justify-end">
                 <div className="">
                   <Popover.Button
+                    id="close-menu-button"
                     className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     onMouseEnter={() => setIsIconHovering(true)}
                     onMouseLeave={() => setIsIconHovering(false)}
@@ -159,6 +166,7 @@ function Header() {
               <nav className="mt-6 flex flex-col items-end gap-y-3">
                 {links.map((link) => (
                   <LinkRS
+                    href={link.href}
                     key={link.href}
                     activeClass="active"
                     to={link.href}
