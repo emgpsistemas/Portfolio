@@ -22,10 +22,10 @@ export async function POST(request: Request, response: NextApiResponse) {
     const sgResponse = await SendGridMail.send(messageToSend);
 
     if (sgResponse[0].statusCode !== 202) {
-      response.status(500).json({ error: "Erro ao enviar mensagem!" });
+      response.status(500).json({ error: sgResponse });
     }
 
-    return NextResponse.json({ message: response });
+    return NextResponse.json({ message: sgResponse });
   } catch (error) {
     return response.status(500).json({ error: "Erro ao enviar mensagem!" });
   }
