@@ -2,7 +2,7 @@ import Scroll100VHIcon from "../Scroll100VHIcon";
 
 function HomeSection() {
   return (
-    <div className=" relative h-screen w-screen">
+    <div className="relative h-screen">
       <div
         className="relative flex h-screen w-full items-center justify-center lg:max-w-[60vw]"
         id="home"
