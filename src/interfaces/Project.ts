@@ -4,12 +4,13 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
 }
 
 export interface WebProject extends Project {
   url?: string;
   github?: string;
+  video?: string;
 }
 
 export interface MobileProject extends Project {
