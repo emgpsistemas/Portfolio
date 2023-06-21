@@ -230,17 +230,17 @@ export const equipe: TeamMember[] = [
 export const projetosWeb: WebProject[] = [
   {
     id: 1,
-    title: "NotaXpert",
-    description:
-      "A aplicação oferece visualização de informações de notas fiscais cadastradas por meio de tabela ou board kanban, gráficos estatísticos em diversas formas, upload de arquivos para análise, criação de permissões de usuários e um sistema de notificações. Essa solução completa permite a gestão eficiente de notas fiscais, análise de dados e colaboração segura entre usuários.",
-    video: "/sanofi.webm",
-  },
-  {
-    id: 2,
     title: "PetroSchematics",
     description:
       "O projeto de esquemático de poços de petróleo utiliza uma aplicação dedicada para inserir, editar e excluir informações de equipamentos em diferentes camadas do poço. Através dessa aplicação, é possível gerenciar equipamentos de subsuperfície, superfície e adicionar comentários em posições específicas de profundidade no esquemático. Com essa ferramenta, é possível manter um registro preciso e atualizado das configurações do poço, facilitando o planejamento e monitoramento das operações. Além disso, a aplicação permite uma análise mais detalhada das características do poço e suporta a tomada de decisões informadas. Com um sistema intuitivo, o gerenciamento de informações torna-se eficiente e seguro, contribuindo para a otimização das atividades de exploração e produção de petróleo.",
     video: "/esquematico.webm",
+  },
+  {
+    id: 2,
+    title: "NotaXpert",
+    description:
+      "A aplicação oferece visualização de informações de notas fiscais cadastradas por meio de tabela ou board kanban, gráficos estatísticos em diversas formas, upload de arquivos para análise, criação de permissões de usuários e um sistema de notificações. Essa solução completa permite a gestão eficiente de notas fiscais, análise de dados e colaboração segura entre usuários.",
+    video: "/sanofi.webm",
   },
   {
     id: 3,
