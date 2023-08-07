@@ -56,6 +56,9 @@ function Header() {
         <div className="flex items-center justify-between py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <LinkRS
+              id="logo-link"
+              alt="Logo da EMGP Sistemas"
+              href="/"
               activeClass="active"
               to={"home"}
               spy={true}
@@ -64,8 +67,9 @@ function Header() {
             >
               {isMobile && !scrolled ? null : (
                 <Image
+                  id="logo-image"
                   src={logo}
-                  alt="logo"
+                  alt="Logo da EMGP Sistemas"
                   width={isMobile ? 44 : 80}
                   height={isMobile ? 44 : 80}
                   className="cursor-pointer"
@@ -73,8 +77,9 @@ function Header() {
               )}
             </LinkRS>
           </div>
-          <div className="-my-2 -mr-2 md:hidden">
+          <div className="-my-2 -mr-2 lg:hidden">
             <Popover.Button
+              id="menu-button"
               className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
               onMouseEnter={() => setIsIconHovering(true)}
               onMouseLeave={() => setIsIconHovering(false)}
@@ -89,10 +94,11 @@ function Header() {
               />
             </Popover.Button>
           </div>
-          <nav className="hidden space-x-10 md:flex">
+          <nav className="hidden space-x-10 lg:flex">
             {links.map((link) =>
               link.label === "Home" ? null : (
                 <LinkRS
+                  href={link.href}
                   key={link.href}
                   activeClass="active"
                   to={link.href}
@@ -136,13 +142,14 @@ function Header() {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top-right transform rounded-b-xl bg-black bg-opacity-30 p-0 backdrop-blur-md transition md:hidden"
+          className="absolute inset-x-0 top-0 origin-top-right transform rounded-b-xl bg-black bg-opacity-30 p-0 backdrop-blur-md transition lg:hidden"
         >
           <div className="bg-background divide-y-2 divide-gray-50 rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-7 py-8">
               <div className="flex items-center justify-end">
                 <div className="">
                   <Popover.Button
+                    id="close-menu-button"
                     className="focus:ring-offset-background focus:primary-blue-500 flex items-center rounded-xl px-2 py-2 transition-all hover:bg-primary-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2"
                     onMouseEnter={() => setIsIconHovering(true)}
                     onMouseLeave={() => setIsIconHovering(false)}
@@ -159,6 +166,7 @@ function Header() {
               <nav className="mt-6 flex flex-col items-end gap-y-3">
                 {links.map((link) => (
                   <LinkRS
+                    href={link.href}
                     key={link.href}
                     activeClass="active"
                     to={link.href}

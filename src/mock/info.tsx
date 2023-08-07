@@ -1,7 +1,9 @@
+import projetosMobileImage from "@/assets/projetosMobile.png";
 import eduardoMuchak from "@/assets/team/eduardo-muchak.png";
 import gabrielPeralta from "@/assets/team/gabriel-peralta.png";
 import { Diferencial } from "@/interfaces/Differential";
 import { HowWeWork } from "@/interfaces/HowWeWork";
+import { MobileProject, WebProject } from "@/interfaces/Project";
 import { Servico } from "@/interfaces/Service";
 import { TeamMember } from "@/interfaces/TeamMember";
 import {
@@ -222,5 +224,81 @@ export const equipe: TeamMember[] = [
     imagem: gabrielPeralta,
     linkedIn: "https://www.linkedin.com/in/gabriel-pperalta",
     github: "https://github.com/G-PPeralta",
+  },
+];
+
+export const projetosWeb: WebProject[] = [
+  {
+    id: 1,
+    title: "PetroSchematics",
+    description:
+      "O projeto de esquemático de poços de petróleo utiliza uma aplicação dedicada para inserir, editar e excluir informações de equipamentos em diferentes camadas do poço. Através dessa aplicação, é possível gerenciar equipamentos de subsuperfície, superfície e adicionar comentários em posições específicas de profundidade no esquemático. Com essa ferramenta, é possível manter um registro preciso e atualizado das configurações do poço, facilitando o planejamento e monitoramento das operações. Além disso, a aplicação permite uma análise mais detalhada das características do poço e suporta a tomada de decisões informadas. Com um sistema intuitivo, o gerenciamento de informações torna-se eficiente e seguro, contribuindo para a otimização das atividades de exploração e produção de petróleo.",
+    video: "/esquematico.webm",
+  },
+  {
+    id: 2,
+    title: "NotaXpert",
+    description:
+      "A aplicação oferece visualização de informações de notas fiscais cadastradas por meio de tabela ou board kanban, gráficos estatísticos em diversas formas, upload de arquivos para análise, criação de permissões de usuários e um sistema de notificações. Essa solução completa permite a gestão eficiente de notas fiscais, análise de dados e colaboração segura entre usuários.",
+    video: "/sanofi.webm",
+  },
+  {
+    id: 3,
+    title: "Trybe Wallet",
+    description:
+      "A aplicação oferece uma plataforma web para ajudar as pessoas usuárias a gerenciar e converter seus gastos em diferentes moedas. O projeto foi desenvolvido seguindo as diretrizes e padrões de acessibilidade do WCAG 2.1. Além disso, o projeto foi desenvolvido com ReactJS em conjunto com o Redux para gerenciar os estados da aplicação e a conversa entre os componentes. Também foi desenvolvido com testes unitários e de integração.",
+    video: "/trybe-wallet.webm",
+  },
+  {
+    id: 4,
+    title: "Trivia Game",
+    description:
+      "Um jogo de trivia consiste em perguntas e respostas, onde os jogadores são desafiados a demonstrar seu conhecimento em diferentes áreas. As perguntas são feitas pelo apresentador ou pelo sistema, e os jogadores têm um tempo limitado para responder. As respostas corretas recebem pontos, e o jogador ou equipe com mais pontos no final é o vencedor. É uma atividade interativa e divertida para testar habilidades de conhecimento geral e competir com outras pessoas, seja em eventos sociais ou online.",
+    video: "/trivia-game.webm",
+  },
+];
+
+export const projetosMobile: MobileProject[] = [
+  {
+    id: 1,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
+  },
+  {
+    id: 2,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
+  },
+  {
+    id: 3,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
+  },
+  {
+    id: 4,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
+  },
+  {
+    id: 5,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
+  },
+  {
+    id: 6,
+    title: "nome do projeto",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    image: projetosMobileImage,
   },
 ];
